@@ -1,9 +1,9 @@
-﻿namespace Evently.Modules.Events.Api.Events;
+﻿namespace Evently.Modules.Events.Application.Events.GetEvent;
 
 public sealed record EventResponse(
     Guid Id,
     string Title,
     string Description,
     string Location,
-    DateTime StartAtUtc,
+    DateTime StartsAtUtc,
     DateTime? EndsAtUtc);
