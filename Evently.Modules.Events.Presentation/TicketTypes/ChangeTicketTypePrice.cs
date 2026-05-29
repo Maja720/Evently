@@ -1,5 +1,5 @@
-﻿using Evently.Modules.Events.Application.TicketTypes.UpdateTicketTypePrice;
-using Evently.Modules.Events.Domain.Abstractions;
+﻿using Evently.Common.Domain;
+using Evently.Modules.Events.Application.TicketTypes.UpdateTicketTypePrice;
 using Evently.Modules.Events.Presentation.ApiResults;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -14,7 +14,7 @@ internal static class ChangeTicketTypePrice
         app.MapPut("ticket-types/{id}/price",
             async (Guid id, Request request, ISender sender) =>
             {
-                Result result = await sender.Send(new UpdateTicketTypePriceCommand(id, request.Price);
+                Result result = await sender.Send(new UpdateTicketTypePriceCommand(id, request.Price));
 
                 return result.Match(Results.NoContent, ApiResults.ApiResults.Problem);
             })

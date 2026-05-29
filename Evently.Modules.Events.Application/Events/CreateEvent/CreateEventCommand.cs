@@ -1,5 +1,5 @@
 ﻿using System.Data;
-using Evently.Modules.Events.Application.Abstractions.Messaging;
+using Evently.Common.Application.Messaging;
 using MediatR;
 
 namespace Evently.Modules.Events.Application.Events.CreateEvent;
